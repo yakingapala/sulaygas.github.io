@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Modal Control
     const modal = document.getElementById('modal');
     const closeBtn = document.querySelector('.close-btn');
 
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Handle Order Buttons from Products Section
+    // order buttons
     const orderButtons = document.querySelectorAll('.btn-order');
     const interestSelect = document.getElementById('interest');
 
@@ -28,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', (e) => {
             const productName = e.target.getAttribute('data-product');
             
-            // Scroll to order form
+            // scroll to order form
             const orderSection = document.getElementById('order');
             orderSection.scrollIntoView({ behavior: 'smooth' });
 
-            // Set the dropdown selection based on product
+            // set the dropdown selection 
             if (productName.includes('2.7kg')) {
                 interestSelect.value = '2.7kg';
             } else if (productName.includes('11kg Gasul')) {
@@ -48,12 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Contact Form Submission
+    // xontact sub
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // Get form values
+        // form values
         const name = document.getElementById('name').value.trim();
         const number = document.getElementById('number').value.trim();
         const interest = document.getElementById('interest').value;
@@ -66,19 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Phone number validation (simple)
+        // phone number validation 
         if (number.length < 10 || !/^[\d\s\-+()]+$/.test(number)) {
             alert('Please enter a valid phone number (at least 10 digits).');
             return;
         }
 
-        // Quantity validation
+        // quantity validation
         if (isNaN(quantity) || quantity < 1 || quantity > 10) {
             alert('Please enter a valid quantity between 1 and 10.');
             return;
         }
 
-        // Calculate price based on selection
+        // calculate 
         let price = 0;
         let productName = '';
         
@@ -100,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
         }
 
-        // Show success modal with order summary
+        // success msg
         showModal(`
             <div class="text-center">
                 <div class="modal">
@@ -124,14 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `);
         
-        // Reset form
+        // reset form
         contactForm.reset();
         
-        // Reset quantity to 1
+        // reset to 1
         document.getElementById('quantity').value = 1;
     });
 
-    // Header scroll effect
+    // header scroll effect
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
@@ -143,4 +142,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
