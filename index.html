@@ -42,7 +42,7 @@
 </nav>
 
     <main>
-        <!-- intro na malupit -->
+        <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="container hero-content">
                 <h1>Reliable & Affordable Gas Supply</h1>
@@ -54,21 +54,21 @@
             </div>
         </section>
 
-        <!-- products -->
-         <section id="products" class="products"></section>
+        <!-- Products Section -->
+         <section id="products" class="products">
         <div class="container">
         <h2 class="section-title">Our Gas Cylinders</h2>
         <div class="product-grid">
-            
+            <!-- 2.7kg Tank -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="gasulette.png" alt="2.7kg Gas Tank">
                 </div>
                 <div class="product-info">
-                    <h3>2.7kg</h3>
+                    <h3>2.7kg Gasulette</h3>
                     <p>Perfect for camping, small stoves, or emergency backups.</p>
                     <p class="price">₱280.00</p>
-                    <button class="btn btn-order" data-product="2.7kg Compact Tank">Order Now</button>
+                    <button class="btn btn-order" data-product="2.7kg Gasulette">Order Now</button>
                 </div>
             </div>
 
@@ -77,28 +77,29 @@
                     <img src="11kg.png" alt="11kg Gas Cylinder">
                 </div>
                 <div class="product-info">
-                    <h3>11kg gas</h3>
-                    <p>Maximum capacity for large families or commercial needs.</p>
+                    <h3>11kg Gasul</h3>
+                    <p>Standard size for medium to large families.</p>
                     <p class="price">₱1100.00</p>
-                    <button class="btn btn-order" data-product="11kg gas">Order Now</button>
+                    <button class="btn btn-order" data-product="11kg Gasul">Order Now</button>
                 </div>
             </div>
 
             <div class="product-card">
                 <div class="product-image">
-                    <img src="shine 11.png" alt="11kg Gas Tank">
+                    <img src="shine 11.png" alt="11kg Shine Gas Tank">
                 </div>
                 <div class="product-info">
-                    <h3>11kg shine gas</h3>
-                    <p>Maximum capacity for large families or commercial needs.</p>
+                    <h3>11kg Shine Gas</h3>
+                    <p>Premium quality gas for large families or commercial needs.</p>
                     <p class="price">₱1020.00</p>
-                    <button class="btn btn-order" data-product="11kg shine gas">Order Now</button>
+                    <button class="btn btn-order" data-product="11kg Shine Gas">Order Now</button>
                 </div>
             </div>
         </div>
      </div>
+</section>
 
-        <!-- about u -->
+        <!-- About Us Section -->
         <section id="about" class="about">
             <div class="container about-flex">
                 <div class="about-text">
@@ -113,7 +114,7 @@
             </div>
         </section>
 
-        <!-- order -->
+        <!-- Order Section -->
     <section id="order" class="order-section">
     <div class="container">
         <h2 class="section-title">Place Your Order</h2>
@@ -129,12 +130,12 @@
                 </div>
                 <div class="form-group">
                     <label for="interest">Select Tank Size *</label>
-                   <select id="interest" required>
-        <option value="">Select Tank Size</option>
-        <option value="2.7kg">2.7kg gasulette</option>
-        <option value="2.7kg-gasulette">11kg gasul</option>
-        <option value="11kg">11kg shine gas</option>
-    </select>
+                    <select id="interest" name="interest" required>
+                        <option value="" disabled selected>Please select tank size...</option>
+                        <option value="2.7kg">2.7kg Gasulette - ₱280.00</option>
+                        <option value="11kg">11kg Gasul - ₱1100.00</option>
+                        <option value="11kg-shine">11kg Shine Gas - ₱1020.00</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="quantity">Quantity *</label>
@@ -149,7 +150,7 @@
         </div>
     </div>
 </section>
-        <!-- contacvt -->
+        <!-- Contact Section -->
         <section id="contact" class="contact">
             <div class="container">
                 <h2 class="section-title">Contact</h2>
@@ -193,6 +194,3 @@
     <script src="jss.js"></script>
 </body>
 </html>
-
-
-
