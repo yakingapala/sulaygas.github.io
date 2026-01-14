@@ -49,7 +49,7 @@ img {
     display: block;
 }
 
-/* Custom Bootstrap Overrides */
+/* bootstap hax */
 .navbar-brand span {
     font-size: 1.4rem;
     letter-spacing: -0.5px;
@@ -407,5 +407,55 @@ footer {
 
     .cta-group {
         flex-direction: column;
+    }
+}
+
+form-group label[for]::after {
+    content: ' *';
+    color: #ff6b6b;
+}
+
+.order-summary {
+    background: var(--light-blue) !important;
+    border-left: 4px solid var(--primary-blue);
+    text-align: left;
+}
+
+.order-summary h5 {
+    color: var(--dark-blue);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.order-summary p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+input:invalid, select:invalid, textarea:invalid {
+    border-color: #ff6b6b;
+}
+
+input:valid, select:valid, textarea:valid {
+    border-color: #51cf66;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .order-container {
+        padding: 1.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1.2rem;
     }
 }
