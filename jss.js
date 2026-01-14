@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // set the dropdown selection based on product
             if (productName.includes('2.7kg Compact')) interestSelect.value = '2.7kg';
             else if (productName.includes('2.7kg Gasulette')) interestSelect.value = '2.7kg-gasulette';
-            else if (productName.includes('7kg')) interestSelect.value = '7kg';
-            else if (productName.includes('11kg')) interestSelect.value = '11kg';
+            else if (productName.includes('11kg gasul')) interestSelect.value = '11kg gasul';
+            else if (productName.includes('11kg shine gas')) interestSelect.value = '11kg shine gas';
 
             // visual feedback 
             setTimeout(() => {
@@ -80,21 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
         let productName = '';
         
         switch(interest) {
-            case '2.7kg':
+            case '2.7kg gasulette':
                 price = 280 * quantity;
                 productName = '2.7kg Compact Tank';
                 break;
-            case '2.7kg-gasulette':
-                price = 295 * quantity;
-                productName = '2.7kg Gasulette';
+            case '11kg gasul':
+                price = 1100 * quantity;
+                productName = '11kg Gasul Tank';
                 break;
-            case '7kg':
-                price = 730 * quantity;
-                productName = '7kg Medium Tank';
-                break;
-            case '11kg':
-                price = 1120 * quantity;
-                productName = '11kg Family Tank';
+            case '11kg shine gas':
+                price = 1020 * quantity;
+                productName = '11kg Shine Gas Tank';
                 break;
             default:
                 alert('Please select a tank size.');
@@ -144,5 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
