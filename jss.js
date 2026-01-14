@@ -80,17 +80,17 @@ contactForm.addEventListener('submit', (e) => {
     let productName = '';
     
     switch(interest) {
-        case '2.7kg':
+        case '2.7kg gasulette':
             price = 280 * quantity;
-            productName = '2.7kg Compact Tank';
+            productName = '2.7kg gasulette';
             break;
-        case '2.7kg-gasulette':
-            price = 295 * quantity;
-            productName = '2.7kg Gasulette';
+        case '11kg gasul':
+            price = 1100 * quantity;
+            productName = '11kg gasul';
             break;
-        case '11kg':
-            price = 1120 * quantity;
-            productName = '11kg Family Tank';
+        case '11kg shine gas':
+            price = 1020 * quantity;
+            productName = '11kg shine gas';
             break;
         default:
             alert('Please select a tank size.');
@@ -139,6 +139,7 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('shadow');
     }
 });
+
 
 
 
