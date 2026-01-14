@@ -45,62 +45,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // contact submission
+   // Contact Form Submission
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // get form values
+        // Get form values
         const name = document.getElementById('name').value.trim();
         const number = document.getElementById('number').value.trim();
         const interest = document.getElementById('interest').value;
         const quantity = document.getElementById('quantity').value;
         const message = document.getElementById('message').value.trim();
 
-        // validation
+        // Validation
         if (!name || !number || !interest || !quantity || !message) {
             alert('Please fill in all required fields.');
             return;
         }
 
-        // phone number validation 
+        // Phone number validation (simple)
         if (number.length < 10) {
             alert('Please enter a valid phone number (at least 10 digits).');
             return;
         }
 
-        // quantity validation
+        // Quantity validation
         if (quantity < 1 || quantity > 10) {
             alert('Please enter a quantity between 1 and 10.');
             return;
         }
 
-        // calculate price based on selection
+        // Calculate price based on selection
         let price = 0;
         let productName = '';
         
         switch(interest) {
-            case '2.7kg gasulette':
+            case '2.7kg':
                 price = 280 * quantity;
                 productName = '2.7kg Compact Tank';
                 break;
-            case '11kg gasul':
-                price = 1100 * quantity;
-                productName = '11kg Gasul Tank';
+            case '2.7kg-gasulette':
+                price = 295 * quantity;
+                productName = '2.7kg Gasulette';
                 break;
-            case '11kg shine gas':
-                price = 1020 * quantity;
-                productName = '11kg Shine Gas Tank';
+            case '7kg':
+                price = 730 * quantity;
+                productName = '7kg Medium Tank';
+                break;
+            case '11kg':
+                price = 1120 * quantity;
+                productName = '11kg Family Tank';
                 break;
             default:
                 alert('Please select a tank size.');
                 return;
         }
 
-        // tjanks msg 
+        // Show success modal with order summary
         showModal(`
             <div class="text-center">
-                <div class="modal">
+                <div class="mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#0056b3" class="bi bi-check-circle" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                         <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
@@ -121,14 +125,14 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `);
         
-        // reset
+        // Reset form
         contactForm.reset();
         
-        // reset quantity to 1
+        // Reset quantity to 1
         document.getElementById('quantity').value = 1;
     });
 
-    // header scroll effect
+    // Header scroll effect
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
@@ -140,6 +144,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
 
 
