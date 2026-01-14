@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Modal Control
+ 
     const modal = document.getElementById('modal');
     const closeBtn = document.querySelector('.close-btn');
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Handle Order Buttons from Products Section
+    // buttons for  products
     const orderButtons = document.querySelectorAll('.btn-order');
     const interestSelect = document.getElementById('interest');
 
@@ -28,54 +28,54 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', (e) => {
             const productName = e.target.getAttribute('data-product');
             
-            // Scroll to order form
+            // scroll to order form
             const orderSection = document.getElementById('order');
             orderSection.scrollIntoView({ behavior: 'smooth' });
 
-            // Set the dropdown selection based on product
+            // set the dropdown selection based on product
             if (productName.includes('2.7kg Compact')) interestSelect.value = '2.7kg';
             else if (productName.includes('2.7kg Gasulette')) interestSelect.value = '2.7kg-gasulette';
             else if (productName.includes('7kg')) interestSelect.value = '7kg';
             else if (productName.includes('11kg')) interestSelect.value = '11kg';
 
-            // Visual feedback - focus on name field
+            // visual feedback 
             setTimeout(() => {
                 document.getElementById('name').focus();
             }, 800);
         });
     });
 
-    // Contact Form Submission
+    // contact submission
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // Get form values
+        // get form values
         const name = document.getElementById('name').value.trim();
         const number = document.getElementById('number').value.trim();
         const interest = document.getElementById('interest').value;
         const quantity = document.getElementById('quantity').value;
         const message = document.getElementById('message').value.trim();
 
-        // Validation
+        // validation
         if (!name || !number || !interest || !quantity || !message) {
             alert('Please fill in all required fields.');
             return;
         }
 
-        // Phone number validation (simple)
+        // phone number validation 
         if (number.length < 10) {
             alert('Please enter a valid phone number (at least 10 digits).');
             return;
         }
 
-        // Quantity validation
+        // quantity validation
         if (quantity < 1 || quantity > 10) {
             alert('Please enter a quantity between 1 and 10.');
             return;
         }
 
-        // Calculate price based on selection
+        // calculate price based on selection
         let price = 0;
         let productName = '';
         
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
         }
 
-        // Show success modal with order summary
+        // tjanks msg 
         showModal(`
             <div class="text-center">
                 <div class="modal">
@@ -125,14 +125,14 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `);
         
-        // Reset form
+        // reset
         contactForm.reset();
         
-        // Reset quantity to 1
+        // reset quantity to 1
         document.getElementById('quantity').value = 1;
     });
 
-    // Header scroll effect
+    // header scroll effect
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
@@ -144,4 +144,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
